@@ -50,68 +50,98 @@
     <div class="brand-mark">S</div>
     <h1>Squeezly · Privacy Policy</h1>
   </div>
-  <p class="meta"><strong>Last updated:</strong> April 30, 2026</p>
+  <p class="meta"><strong>Last updated:</strong> May 8, 2026</p>
 
-  <p>Squeezly ("we", "the app") respects user privacy. This Privacy Policy explains what data is processed when you use the Squeezly mobile application.</p>
+  <p>Squeezly ("we", "the app") respects user privacy. This Privacy Policy explains what data is processed when you use the Squeezly mobile application on Apple iOS or Google Android.</p>
 
   <h2>1. Data We Collect</h2>
 
-  <h3>1.1 PDF files you provide</h3>
-  <p>PDF files you select are processed <strong>only on your device</strong>. These files are:</p>
+  <h3>1.1 Files you provide</h3>
+  <p>The files you select for compression — including <strong>PDF documents, images, and videos</strong> — are processed <strong>only on your device</strong>. These files are:</p>
   <ul>
-    <li>Never sent to any server.</li>
+    <li>Never uploaded to any server.</li>
     <li>Never viewed by us or any third party.</li>
     <li>Stored only at the location you choose, after compression.</li>
   </ul>
 
-  <h3>1.2 Automatically collected data</h3>
+  <h3>1.2 Automatically collected data (advertising)</h3>
+  <p>The free tier shows ads through Google AdMob. AdMob may automatically collect:</p>
   <ul>
-    <li><strong>Advertising ID</strong>: Google's AdMob service uses your device's advertising ID to show relevant ads.</li>
-    <li><strong>Device type and OS version</strong>: For anonymous aggregate statistics only.</li>
-    <li><strong>In-app usage counters</strong>: Daily compression count, total savings — stored <strong>only on your device</strong>.</li>
+    <li><strong>Advertising identifiers</strong> (IDFA on iOS, GAID on Android) — only when you grant permission (see Section 1.4).</li>
+    <li><strong>Coarse IP address</strong> — used by AdMob to limit ad serving and prevent fraud.</li>
+    <li><strong>Device type, OS version, app version, language</strong> — for ad performance analytics.</li>
+    <li><strong>Crash logs and performance data</strong> related to ad rendering.</li>
+    <li><strong>Ad interactions</strong> (impressions, clicks).</li>
+  </ul>
+  <p>Squeezly itself does not store, log, or transmit this data. Google's processing is governed by Google's own privacy policy (linked in Section 2).</p>
+
+  <h3>1.3 In-app counters stored on your device</h3>
+  <ul>
+    <li>Daily compression count, total bytes saved, and similar statistics — kept <strong>only on your device</strong> and never transmitted.</li>
+    <li>Premium entitlement status — stored locally and synchronized with the App Store / Google Play receipt for the signed-in account.</li>
   </ul>
 
-  <h3>1.3 What we do NOT collect</h3>
+  <h3>1.4 App Tracking Transparency (iOS)</h3>
+  <p>On iOS 14.5 and later, when you first launch Squeezly we display the standard Apple <strong>App Tracking Transparency</strong> prompt before initialising any advertising SDK. You may choose:</p>
   <ul>
-    <li>Your name, email, phone (unless you contact support)</li>
-    <li>Location</li>
-    <li>Contacts, photos or other personal files</li>
-    <li>No account registration — we keep no identifying information</li>
+    <li><strong>Allow</strong> — AdMob may use your IDFA to deliver personalised ads. Ads remain shown either way.</li>
+    <li><strong>Ask App Not to Track</strong> — AdMob serves only contextual (non-personalised) ads; the IDFA is not used.</li>
+  </ul>
+  <p>You can change your decision at any time in <em>iOS Settings → Privacy &amp; Security → Tracking</em>.</p>
+
+  <h3>1.5 What we do NOT collect</h3>
+  <ul>
+    <li>Your real name, email, or phone number (unless you contact support).</li>
+    <li>Your precise location (no GPS access requested).</li>
+    <li>Your contacts, calendar, microphone, or health data.</li>
+    <li>The content of files you compress.</li>
+    <li>No account registration is required — Squeezly does not maintain user accounts.</li>
   </ul>
 
   <h2>2. Third-Party Services</h2>
   <table>
     <tr><th>Service</th><th>Purpose</th><th>Privacy Policy</th></tr>
-    <tr><td>Google AdMob</td><td>Ads in free tier</td><td><a href="https://policies.google.com/privacy">Link</a></td></tr>
-    <tr><td>Google Play Billing</td><td>Premium purchase</td><td><a href="https://policies.google.com/privacy">Link</a></td></tr>
+    <tr><td>Google AdMob</td><td>Ads in free tier (iOS &amp; Android)</td><td><a href="https://policies.google.com/privacy">Link</a></td></tr>
+    <tr><td>Apple App Store / In-App Purchase</td><td>Premium purchase on iOS</td><td><a href="https://www.apple.com/legal/privacy/">Link</a></td></tr>
+    <tr><td>Google Play Billing</td><td>Premium purchase on Android</td><td><a href="https://policies.google.com/privacy">Link</a></td></tr>
   </table>
-  <p>When you upgrade to Premium, no ads are loaded and AdMob does not collect data.</p>
+  <p>Once you upgrade to Premium, ads are no longer requested and AdMob does not collect data for your sessions.</p>
 
-  <h2>3. Data Retention</h2>
+  <h2>3. Required Reasons API (iOS Privacy Manifest)</h2>
+  <p>Squeezly's iOS Privacy Manifest declares the following Apple "Required Reasons" API categories:</p>
   <ul>
-    <li><strong>PDF files</strong>: On your device, until you delete them.</li>
-    <li><strong>Usage statistics</strong>: On your device, deleted when you uninstall the app.</li>
-    <li><strong>Premium status</strong>: Linked to your Google Play account; subscription history managed by Google.</li>
+    <li><strong>FileTimestamp</strong> (C617.1) — to read file modification times when compressing.</li>
+    <li><strong>SystemBootTime</strong> (35F9.1) — to measure compression duration.</li>
+    <li><strong>DiskSpace</strong> (E174.1) — to write the compressed output and temporary files.</li>
+    <li><strong>UserDefaults</strong> (CA92.1) — to persist your local settings and premium entitlement.</li>
+  </ul>
+  <p>None of these APIs are used to track you across apps or websites.</p>
+
+  <h2>4. Data Retention</h2>
+  <ul>
+    <li><strong>Files you compressed</strong>: kept on your device until you delete them.</li>
+    <li><strong>Local statistics</strong>: kept on your device, removed when you uninstall the app.</li>
+    <li><strong>Premium entitlement</strong>: managed by Apple App Store or Google Play; subscription history is held by the respective store.</li>
   </ul>
 
-  <h2>4. Children's Privacy</h2>
-  <p>Squeezly is not directed at users under 13. We do not knowingly collect data from this age group.</p>
+  <h2>5. Children's Privacy</h2>
+  <p>Squeezly is not directed at children under 13. We do not knowingly collect data from this age group.</p>
 
-  <h2>5. Your Rights</h2>
-  <p>Under GDPR, KVKK (Turkey) and similar laws:</p>
+  <h2>6. Your Rights</h2>
+  <p>Under GDPR (EU), KVKK (Turkey) and similar laws you have the rights below:</p>
   <ul>
     <li><strong>Access</strong>: All your data is visible in the app's "Settings" section.</li>
-    <li><strong>Deletion</strong>: Uninstalling the app deletes all local data. You can cancel your subscription via Google Play account settings.</li>
-    <li><strong>Ad personalization</strong>: Reset your advertising ID in your device's "Settings &gt; Privacy &gt; Ads".</li>
+    <li><strong>Deletion</strong>: Uninstalling the app deletes all local data. To cancel a subscription, use Settings → Apple ID → Subscriptions on iOS, or your Google Play account on Android.</li>
+    <li><strong>Ad personalisation</strong>: On iOS, change tracking permission in Settings → Privacy &amp; Security → Tracking. On Android, reset your advertising ID in Settings → Privacy → Ads.</li>
   </ul>
 
-  <h2>6. Security</h2>
-  <p>Since PDF files are never uploaded, network interception is not possible. Premium payments are encrypted via Google Play infrastructure.</p>
+  <h2>7. Security</h2>
+  <p>Because your files are not uploaded, network interception is not possible. Premium payments are processed by Apple's or Google's encrypted billing infrastructure — we never see your card details.</p>
 
-  <h2>7. Changes to This Policy</h2>
-  <p>We may update this policy from time to time. Material changes will be communicated via in-app notification.</p>
+  <h2>8. Changes to This Policy</h2>
+  <p>We may update this policy from time to time. Material changes will be announced via in-app notification.</p>
 
-  <h2>8. Contact</h2>
-  <p>Questions: <a href="mailto:mustafasalimerek@gmail.com"><strong>mustafasalimerek@gmail.com</strong></a></p>
+  <h2>9. Contact</h2>
+  <p>Questions or requests: <a href="mailto:mustafasalimerek@gmail.com"><strong>mustafasalimerek@gmail.com</strong></a></p>
 </body>
 </html>
