@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daylit · Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+    line-height: 1.7;
+    color: #1B1A16;
+    background: #F6F3EC;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #F1EFE8; background: #14130F; }
+    th, td { border-color: #3A382F !important; }
+    a { color: #4FB191 !important; }
+    th { background: #1E1C17 !important; }
+  }
+  .header {
+    display: flex; align-items: center; gap: 12px;
+    padding-bottom: 16px; border-bottom: 1px solid #E7E2D6; margin-bottom: 24px;
+  }
+  .brand-mark {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: #0C6B4F;
+    display: grid; place-items: center;
+    color: white; font-weight: 800; font-size: 16px;
+  }
+  .header h1 { margin: 0; font-size: 22px; }
+  h2 { margin-top: 32px; font-size: 19px; }
+  h3 { font-size: 16px; }
+  table { border-collapse: collapse; margin: 12px 0; width: 100%; }
+  th, td { border: 1px solid #E7E2D6; padding: 8px 12px; text-align: left; font-size: 14px; }
+  th { background: #EFEADF; font-weight: 600; }
+  .meta { color: #6B675C; font-size: 14px; }
+  a { color: #0C6B4F; }
+  .back { display: inline-block; margin-bottom: 16px; }
+  .callout {
+    background: #E4EFE7; border-left: 3px solid #0C6B4F;
+    padding: 12px 16px; border-radius: 8px; margin: 16px 0;
+  }
+  @media (prefers-color-scheme: dark) { .callout { background: #16241C; } }
+</style>
+</head>
+<body>
+  <a class="back" href="https://apps.apple.com/app/daylit">← Back</a>
+  <div class="header">
+    <div class="brand-mark">D</div>
+    <h1>Daylit · Privacy Policy</h1>
+  </div>
+  <p class="meta"><strong>Last updated:</strong> June 11, 2026</p>
+
+  <p>Daylit ("we", "the app") is an honest AI day planner from Erek Studio. This Privacy Policy explains, in plain language, exactly what happens to the information you put into Daylit.</p>
+
+  <div class="callout">
+    <strong>The short version:</strong> Daylit has no accounts and no logins. To build your plan, the tasks you type are sent securely to our planning service and an AI model, used only to generate your schedule, and <strong>not stored on our servers</strong>. We run no analytics, no ad tracking, and we never sell your data. Your plans live on your device.
+  </div>
+
+  <h2>1. What You Provide</h2>
+  <p>Daylit only processes what you choose to type in:</p>
+  <ul>
+    <li><strong>Your brain-dump</strong> — the tasks, notes and to-dos you enter for the day.</li>
+    <li><strong>Your planning preferences</strong> — things like your available hours, energy windows and the intensity you pick.</li>
+  </ul>
+  <p>That's it. Daylit does not ask for your name, email, phone number, contacts, location, photos, or calendar.</p>
+
+  <h2>2. How Your Plan Is Generated</h2>
+  <p>Daylit is not a fully on-device app: turning a messy task list into a realistic, time-blocked plan is done by an AI model. To make that work:</p>
+  <ul>
+    <li>The text you enter is sent over an encrypted (HTTPS) connection to <strong>our planning gateway</strong> (hosted on Cloudflare Workers).</li>
+    <li>The gateway forwards it to an <strong>AI model provider (Anthropic)</strong>, which returns your plan.</li>
+    <li>Your plan is streamed back to your device and saved <strong>locally on your phone</strong>.</li>
+  </ul>
+  <div class="callout">
+    <strong>Zero-retention.</strong> Our gateway does <strong>not</strong> store the content of your tasks or plans. It is processed in transit only — long enough to generate your schedule — and then discarded. We keep only anonymous, content-free counters (for example, how many plans a device has made today) so we can prevent abuse and run the service. The AI provider processes the request to generate the response and does not use your content to train its models.
+  </div>
+
+  <h2>3. Device Verification (App Attest)</h2>
+  <p>To stop bots and abuse of our service, Daylit uses Apple's <strong>App Attest</strong>. This gives us an <strong>opaque device identifier</strong> — a random-looking token tied to the app install, not to you. It cannot be used to identify you, and it is not linked to the content of your tasks.</p>
+
+  <h2>4. Subscriptions</h2>
+  <p>Daylit offers an optional premium subscription. Purchases are handled entirely by <strong>Apple's In-App Purchase</strong> system; we never see your payment details. We use <strong>RevenueCat</strong> to manage subscription status, keyed to the opaque device identifier above (no name, no email).</p>
+
+  <h2>5. What We Do NOT Do</h2>
+  <ul>
+    <li>No accounts, no logins, no passwords.</li>
+    <li>No analytics, crash-reporting, or tracking SDKs.</li>
+    <li>No advertising and no ad identifiers (no IDFA/GAID).</li>
+    <li>No selling or sharing of your data with data brokers.</li>
+    <li>No access to your contacts, location, photos, or calendar.</li>
+  </ul>
+
+  <h2>6. Third-Party Services</h2>
+  <table>
+    <tr><th>Service</th><th>Purpose</th><th>Privacy Policy</th></tr>
+    <tr>
+      <td>Cloudflare</td>
+      <td>Hosts our planning gateway (transient processing, zero-retention)</td>
+      <td><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a></td>
+    </tr>
+    <tr>
+      <td>Anthropic</td>
+      <td>AI model that generates your plan; does not retain or train on your content</td>
+      <td><a href="https://www.anthropic.com/legal/privacy">Anthropic</a></td>
+    </tr>
+    <tr>
+      <td>RevenueCat</td>
+      <td>Manages subscription status (opaque device id only)</td>
+      <td><a href="https://www.revenuecat.com/privacy/">RevenueCat</a></td>
+    </tr>
+    <tr>
+      <td>Apple App Store</td>
+      <td>In-app purchase processing and App Attest</td>
+      <td><a href="https://www.apple.com/legal/privacy/">Apple</a></td>
+    </tr>
+  </table>
+
+  <h2>7. Data Retention</h2>
+  <ul>
+    <li><strong>Your tasks &amp; plans on our servers</strong>: not retained — processed in transit only.</li>
+    <li><strong>Your plans on your device</strong>: stay on your phone until you delete them or uninstall the app.</li>
+    <li><strong>Anonymous service counters</strong>: short-lived (they reset daily) and contain no task content.</li>
+    <li><strong>Subscription status</strong>: managed by Apple and RevenueCat per their policies.</li>
+  </ul>
+
+  <h2>8. Children's Privacy</h2>
+  <p>Daylit is not directed at children under 13 and does not knowingly collect personal data from them.</p>
+
+  <h2>9. Your Rights</h2>
+  <p>Under GDPR, KVKK (Turkey), CCPA and similar laws you have rights over your personal data. Because we keep no server-side record of your tasks or plans, there is no stored personal profile to export or erase. To remove the data on your device, delete the app. Manage or cancel your subscription from your Apple ID account settings.</p>
+  <p>For any privacy request or question, contact us below.</p>
+
+  <h2>10. Security</h2>
+  <p>All communication between the app and our gateway is encrypted in transit (HTTPS/TLS). Requests are gated by Apple App Attest so only genuine installs of Daylit can reach the service. Because we do not retain your task content, there is no stored body of personal data on our side to be breached.</p>
+
+  <h2>11. Changes to This Policy</h2>
+  <p>We may update this policy from time to time. The "Last updated" date above will change, and material updates will be reflected here.</p>
+
+  <h2>12. Contact</h2>
+  <p>Questions or privacy requests: <a href="mailto:mustafasalimerek@gmail.com"><strong>mustafasalimerek@gmail.com</strong></a></p>
+  <p>Data controller: Erek Studio (the developer account shown on the App Store).</p>
+</body>
+</html>
